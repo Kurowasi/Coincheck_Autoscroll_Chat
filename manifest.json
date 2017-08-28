@@ -1,0 +1,26 @@
+{
+    "name": "オートスクロール",
+    "description": "コインチェックのチャット欄のオートスクロールにする拡張",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "設定画面",
+        "default_popup": "Popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://coincheck.com/*",
+                "https://coincheck.com/*"
+            ],
+            "js": [
+                "ContentScript/contentScript.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
+}
